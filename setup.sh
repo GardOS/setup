@@ -48,6 +48,20 @@ cd tools
 wget https://download.jetbrains.com/idea/ideaIU-2018.2.3.tar.gz
 tar xzvf ~/tools/ideaIU-2018.2.3.tar.gz 
 rm ~/tools/ideaIU-2018.2.3.tar.gz
+sudo sh -c "echo 
+'[Desktop Entry]
+Version=13.0
+Type=Application
+Terminal=false
+Icon[en_US]=/home/gardo1506/.IntelliJIdea2018.2/bin/idea.png
+Name[en_US]=IntelliJ
+Exec=/home/gardo1506/.IntelliJIdea2018.2/bin/idea.sh
+Name=IntelliJ
+Icon=/home/gardo1506/.IntelliJIdea2018.2/bin/idea.png' >> /usr/share/applications/intellij.desktop"
+
+sudo chmod 644 /usr/share/applications/intellij.desktop
+sudo chown root:root /usr/share/applications/intellij.desktop
+
 sudo apt-get install -y default-jdk
 sudo apt-get install -y maven
 
@@ -87,8 +101,8 @@ crosh:
     vmc start termina
     lxc profile unset default security.syscalls.blacklist && lxc profile apply penguin default
 
+vscode
+intellij
 sudo docker run hello-world
-~/tools/idea-IU-182.4323.46/bin/idea.sh &
-code ~/school 
 cd ~/school/devops && docker-compose up -d
 '
