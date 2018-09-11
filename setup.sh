@@ -48,8 +48,7 @@ cd tools
 wget https://download.jetbrains.com/idea/ideaIU-2018.2.3.tar.gz
 tar xzvf ~/tools/ideaIU-2018.2.3.tar.gz 
 rm ~/tools/ideaIU-2018.2.3.tar.gz
-sudo sh -c "echo 
-'[Desktop Entry]
+sudo sh -c "echo '[Desktop Entry]
 Version=13.0
 Type=Application
 Terminal=false
@@ -94,13 +93,12 @@ docker -v
 docker-compose -v
 
 #Manual steps
-:'
+: '
 Restart
 crosh: 
     vmc stop termina 
     vmc start termina
     lxc profile unset default security.syscalls.blacklist && lxc profile apply penguin default
-
 vscode
 intellij
 sudo docker run hello-world
