@@ -35,6 +35,13 @@ cd ~
 curl -L https://go.microsoft.com/fwlink/?LinkID=760868 > vscode.deb
 sudo apt install -y ./vscode.deb
 rm vscode.deb
+sudo sh -c "echo 'deb http://deb.debian.org/debian stretch main contrib
+deb http://security.debian.org/debian-security stretch/updates main contrib
+deb [arch=amd64] https://download.docker.com/linux/debian stretch stable contrib
+# deb-src [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list"
+
+sudo apt-get update
+sudo apt-get install fonts-firacode
 
 #Nvm, Node
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
