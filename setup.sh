@@ -1,4 +1,4 @@
-#!/bin/sh
+v#!/bin/sh
 
 #Note: Links might expire
 
@@ -10,7 +10,8 @@ apt-transport-https \
 ca-certificates \
 curl \
 gnupg2 \
-software-properties-common
+software-properties-common \
+unzip
 
 #File structure
 mkdir div
@@ -86,6 +87,11 @@ sudo usermod -aG docker $USER
 sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+#Terraform
+wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
+unzip terraform_0.11.8_linux_amd64.zip
+sudo mv terraform /usr/local/bin/\n
+
 #Finalize and verify
 sudo apt-get update -y
 clear
@@ -98,6 +104,7 @@ java -version
 mvn -v
 docker -v
 docker-compose -v
+terraform -v
 
 #Manual steps
 : '
