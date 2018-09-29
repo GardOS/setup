@@ -129,7 +129,7 @@ sudo chsh -s $(which zsh)
 echo export DISPLAY=:0 >> ~/.zshrc
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-DEFAULT_USER=`whoami`
+echo "#Custom\nDEFAULT_USER=`whoami`" >> ~/.zshrc
 sed -i -e 's/"robbyrussell"/"agnoster"/g' ~/.zshrc
 
 #Finalize and verify
