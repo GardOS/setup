@@ -121,6 +121,16 @@ wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd6
 unzip terraform_0.11.8_linux_amd64.zip
 sudo mv terraform /usr/local/bin/
 
+#ZSH
+sudo apt-get install zsh
+sudo chsh -s $(which zsh)
+#sudo usermod -s $(which zsh) gardo1506 #TODO: Check if needed
+echo export DISPLAY=:0 >> ~/.zshrc
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+DEFAULT_USER=`whoami`
+sed -i -e 's/"robbyrussell"/"agnoster"/g' ~/.zshrc
+
 #Finalize and verify
 sudo apt-get update -y
 clear
@@ -134,6 +144,7 @@ mvn -v
 docker -v
 docker-compose -v
 terraform -v
+zsh --version
 
 #Manual steps
 : '
