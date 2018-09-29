@@ -40,7 +40,7 @@ cd ~
 #Git
 git config --global user.email "Gardo1506@gmail.com"
 git config --global user.name "GardOS"
-git config credential.helper store
+git config --global credential.helper 'cache --timeout 7200'
 
 #Gnome-terminal
 sudo apt-get install -y gnome-terminal
