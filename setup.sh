@@ -32,6 +32,11 @@ git clone https://github.com/GardOS/DevOps-Exercise.git
 wget https://raw.githubusercontent.com/starkandwayne/concourse-tutorial/master/docker-compose.yml
 cd ~
 
+#Setup
+cd ~/tools
+git clone https://github.com/GardOS/setup.git
+cd ~ 
+
 #Git
 git config --global user.email "Gardo1506@gmail.com"
 git config --global user.name "GardOS"
