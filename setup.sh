@@ -1,4 +1,4 @@
-v#!/bin/sh
+#!/bin/sh
 
 #Note: Links might expire
 
