@@ -41,6 +41,26 @@ cd ~
 git config --global user.email "Gardo1506@gmail.com"
 git config --global user.name "GardOS"
 
+#Gnome-terminal
+sudo apt-get install gnome-terminal
+
+sudo sh -c "echo '[Desktop Entry]
+Name=GnomeTerminal
+Comment=Use the command line
+Keywords=shell;prompt;command;commandline;cmd;
+TryExec=gnome-terminal
+Exec=gnome-terminal
+Icon=utilities-terminal
+Type=Application
+X-GNOME-DocPath=gnome-terminal/index.html
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gnome-terminal
+X-GNOME-Bugzilla-Component=BugBuddyBugs
+X-GNOME-Bugzilla-Version=3.28.2
+Categories=GNOME;GTK;System;TerminalEmulator;
+StartupNotify=true
+X-GNOME-SingleWindow=false' >> /usr/share/applications/gnome-terminal.desktop"
+
 #VSCode
 curl -L https://go.microsoft.com/fwlink/?LinkID=760868 > vscode.deb
 sudo apt install -y ./vscode.deb
