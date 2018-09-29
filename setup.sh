@@ -42,7 +42,7 @@ git config --global user.email "Gardo1506@gmail.com"
 git config --global user.name "GardOS"
 
 #Gnome-terminal
-sudo apt-get install gnome-terminal
+sudo apt-get install -y gnome-terminal
 
 sudo sh -c "echo '[Desktop Entry]
 Name=GnomeTerminal
@@ -71,7 +71,7 @@ deb [arch=amd64] https://download.docker.com/linux/debian stretch stable contrib
 # deb-src [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list"
 
 sudo apt-get update
-sudo apt-get install fonts-firacode
+sudo apt-get install -y fonts-firacode
 
 #Nvm, Node
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
