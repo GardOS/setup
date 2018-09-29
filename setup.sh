@@ -132,6 +132,17 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 echo "#Custom\nDEFAULT_USER=`whoami`" >> ~/.zshrc
 sed -i -e 's/"robbyrussell"/"agnoster"/g' ~/.zshrc
 
+#Crostini - Sommelier
+mkdir -p ~/.config/systemd/user
+   
+cp -r /etc/systemd/user/sommelier@0.service.d \
+	/etc/systemd/user/sommelier-x@0.service.d \
+	~/.config/systemd/user/
+
+sed -i -e 's/Environment="SOMMELIER_ACCELERATORS=Super_L"/Environment="SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketright,<Alt>bracketleft,<Alt>equal, <Alt>minus"/g' ~/.config/systemd/user/sommelier-x@0.service.d/cros-sommelier-x-override.conf
+
+sed -i -e 's/Environment="SOMMELIER_ACCELERATORS=Super_L"/Environment="SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketright,<Alt>bracketleft,<Alt>equal,<Alt>minus"/g' ~/.config/systemd/user/sommelier@0.service.d/cros-sommelier-override.conf
+
 #Finalize and verify
 sudo apt-get update -y
 clear
@@ -149,13 +160,7 @@ zsh --version
 
 #Manual steps
 : '
-Restart
-crosh: 
-    vmc stop termina 
-    vmc start termina
-    lxc profile unset default security.syscalls.blacklist && lxc profile apply penguin default
-vscode
-intellij
-sudo docker run hello-world
-cd ~/school/devops && docker-compose up -d
+systemctl --user daemon-reload
+systemctl --user restart sommelier@0.service
+systemctl --user restart sommelier-x@0.service
 '
