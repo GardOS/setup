@@ -90,7 +90,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 #Terraform
 wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
 unzip terraform_0.11.8_linux_amd64.zip
-sudo mv terraform /usr/local/bin/\n
+sudo mv terraform /usr/local/bin/
 
 #Finalize and verify
 sudo apt-get update -y
