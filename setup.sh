@@ -148,7 +148,7 @@ sudo apt-get update -y
 clear
 
 code -v
-nvm -v
+nvm --version
 node -v
 npm -v
 java -version
