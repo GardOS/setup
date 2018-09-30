@@ -13,6 +13,16 @@ gnupg2 \
 software-properties-common \
 unzip
 
+#ZSH
+sudo apt-get install zsh
+sudo chsh -s $(which zsh)
+sudo usermod -s $(which zsh) gardo1506
+echo export DISPLAY=:0 >> ~/.zshrc
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "#Custom\nDEFAULT_USER=`whoami`" >> ~/.zshrc
+sed -i -e 's/"robbyrussell"/"agnoster"/g' ~/.zshrc
+
 #File structure
 mkdir div
 mkdir downloads
@@ -75,10 +85,10 @@ sudo apt-get update
 sudo apt-get install -y fonts-firacode
 
 #Nvm, Node
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | zsh
 . ~/.nvm/nvm.sh
 . ~/.profile
-. ~/.bashrc
+. ~/.zshrc
 nvm install node
 
 #IntelliJ, Java, Maven
@@ -121,16 +131,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
 unzip terraform_0.11.8_linux_amd64.zip
 sudo mv terraform /usr/local/bin/
-
-#ZSH
-sudo apt-get install zsh
-sudo chsh -s $(which zsh)
-#sudo usermod -s $(which zsh) gardo1506 #TODO: Check if needed
-echo export DISPLAY=:0 >> ~/.zshrc
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-echo "#Custom\nDEFAULT_USER=`whoami`" >> ~/.zshrc
-sed -i -e 's/"robbyrussell"/"agnoster"/g' ~/.zshrc
 
 #Crostini - Sommelier
 mkdir -p ~/.config/systemd/user
