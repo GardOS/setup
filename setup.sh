@@ -139,7 +139,7 @@ cp -r /etc/systemd/user/sommelier@0.service.d \
 	/etc/systemd/user/sommelier-x@0.service.d \
 	~/.config/systemd/user/
 
-sed -i -e 's/Environment="SOMMELIER_ACCELERATORS=Super_L"/Environment="SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketright,<Alt>bracketleft,<Alt>equal, <Alt>minus"/g' ~/.config/systemd/user/sommelier-x@0.service.d/cros-sommelier-x-override.conf
+sed -i -e 's/Environment="SOMMELIER_ACCELERATORS=Super_L"/Environment="SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketright,<Alt>bracketleft,<Alt>equal,<Alt>minus"/g' ~/.config/systemd/user/sommelier-x@0.service.d/cros-sommelier-x-override.conf
 
 sed -i -e 's/Environment="SOMMELIER_ACCELERATORS=Super_L"/Environment="SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketright,<Alt>bracketleft,<Alt>equal,<Alt>minus"/g' ~/.config/systemd/user/sommelier@0.service.d/cros-sommelier-override.conf
 
