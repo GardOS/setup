@@ -132,6 +132,9 @@ wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd6
 unzip terraform_0.11.8_linux_amd64.zip
 sudo mv terraform /usr/local/bin/
 
+#Heroku
+curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
 #Crostini - Sommelier
 mkdir -p ~/.config/systemd/user
    
@@ -156,6 +159,7 @@ mvn -v
 docker -v
 docker-compose -v
 terraform -v
+heroku -v
 zsh --version
 
 #Manual steps
