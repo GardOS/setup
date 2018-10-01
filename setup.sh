@@ -91,7 +91,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 . ~/.zshrc
 nvm install node
 
-#IntelliJ, Java, Maven
+#IntelliJ
 cd tools
 wget https://download.jetbrains.com/idea/ideaIU-2018.2.3.tar.gz
 tar xzvf ~/tools/ideaIU-2018.2.3.tar.gz 
@@ -109,8 +109,13 @@ Icon=/home/gardo1506/.IntelliJIdea2018.2/bin/idea.png' >> /usr/share/application
 sudo chmod 644 /usr/share/applications/intellij.desktop
 sudo chown root:root /usr/share/applications/intellij.desktop
 
-sudo apt-get install -y default-jdk
-sudo apt-get install -y maven
+#SDK
+curl -s "https://get.sdkman.io" | zsh
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+sdk install springboot
+sdk install java
+sdk install maven
 
 #Docker, Docker-compose
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
@@ -154,6 +159,8 @@ code -v
 nvm --version
 node -v
 npm -v
+sdk version
+spring --version
 java -version
 mvn -v
 docker -v
