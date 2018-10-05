@@ -91,6 +91,12 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 . ~/.zshrc
 nvm install node
 
+#Yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update
+sudo apt-get -o Dpkg::Options::="--force-overwrite" install yarn -y
+
 #IntelliJ
 cd tools
 wget https://download.jetbrains.com/idea/ideaIU-2018.2.3.tar.gz
